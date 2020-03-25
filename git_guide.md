@@ -43,21 +43,21 @@ Tài liệu tham khảo:
 ##### 3.2.1 Lấy remote address của dự án
 
 ```
-https://ntson1991@bitbucket.org/ntson1991/ltt_cuongnm.git
+https://github.com/hieu2496/gitGuide.git
 ```
 
-*Lưu ý: Có thể setting ssh-key để clone code từ địa chỉ dạng "git@bitbucket.org:ntson1991/ltt_cuongnm.git" để không cần nhập username/password khi thực hiện các tao tác với git (Tham khảo tại [đây](https://help.github.com/articles/generating-ssh-keys/))*
+*Lưu ý: Có thể setting ssh-key để clone code từ địa chỉ dạng "git@github.com:hieu2496/gitGuide.git" để không cần nhập username/password khi thực hiện các tao tác với git (Tham khảo tại [đây](https://help.github.com/articles/generating-ssh-keys/))*
 
 ##### 3.2.2 Clone code
 
 Tại thư mục chứa code, chẳng hạn `C:\xampp\htdocs`, gõ lệnh:
 
 ```
-git clone https://ntson1991@bitbucket.org/ntson1991/ltt_cuongnm.git training
+git clone https://github.com/hieu2496/gitGuide.git training
 ```
 Code của dự án sẽ được clone về thư mục `C:\xampp\htdocs\training`
 
-*Lưu ý: Không truyền training thì mặc định sẽ được clone về thư mục `C:\xampp\htdocs\ltt_cuongnm`*
+*Lưu ý: Không truyền training thì mặc định sẽ được clone về thư mục `C:\xampp\htdocs\gitGuide`*
 
 
 ##### 3.2.3 Kiểm tra lại remote
@@ -71,8 +71,8 @@ git remote -v
 Nếu kết quả như sau thì việc clone code đã thành công.
 
 ```
-origin  https://ntson1991@bitbucket.org/ntson1991/ltt_cuongnm.git (fetch)
-origin  https://ntson1991@bitbucket.org/ntson1991/ltt_cuongnm.git (push)
+origin  https://github.com/hieu2496/gitGuide.git (fetch)
+origin  https://github.com/hieu2496/gitGuide.git (push)
 ````
 
 #### 3.3 Cập nhật code
@@ -81,16 +81,6 @@ Nên thực hiện kiểm tra tình trạng hiện tại vào đầu giờ sáng
 
 ```
 git fetch origin
-```
-
-Kết quả nhận được sẽ có dạng:
-
-```
-From git@bitbucket.org:ntson1991/ltt_cuongnm
-   d4afea6..1991b02  master     -> origin/master
- * [new branch]      I6974      -> origin/I6974
- * [new branch]      production -> origin/production
-   f432c7a..51ada17  staging    -> origin/staging
 ```
 
 Ta sẽ thấy các thay đổi trên hệ thống: các branch mới được tạo, các branch được cập nhật. Ngoài ra lệnh fetch còn cập nhật đồng bộ lại dữ liệu giữa repo local và repo remote.
@@ -267,40 +257,10 @@ Changes to be committed:
 Tạo commit và message commit
 
 ```
-git commit
+git commit -m "message"
 ```
 
-*Chú ý không nên sử dụng lệnh `git commit -m "message"`*
-
-Màn hình sẽ hiển thị editor nhập message commit. Nhập message commit sau đó tiếp tục, commit sẽ được tạo.
-
-*Quy tắc viết message commit:*
-
-```
-RedmineIssueId Tên màn hình Mô tả ngắn gọn màn hình
-___Để cách một dòng trống ở đây___
-Công việc 1
-Công việc 2
-.....
-Công việc n
-___Để cách một dòng trống ở đây___
-Resolves: #RedmineIssueId
-___Để cách một dòng trống ở đây___
-```
-*Lưu ý: Ngoài [Công việc 1], [Công việc 2], ... có thể có hoặc không, các mục khác là bắt buộc phải có. Tên màn hình viết hoa.*
-
-Ví dụ:
-```
-6996 FCBA010 Create top english
---- NEWLINE ---
-Add code top english
-Code unittest
---- NEWLINE ---
-Resolves: #6996
---- NEWLINE ---
-```
-
-Dòng message đầu tiên không nên quá 50 kí tự vì màn hình log sẽ có thể không hiển thị hết.
+*Chú ý không nên sử dụng lệnh `git commit --amend`, lệnh này sẽ ghi đè commit gần nhất*
 
 ##### 3.5.3 Kiểm tra lại commit vừa tạo
 
@@ -442,5 +402,5 @@ git push origin feature-6996-feba010-top-english -f
 
 ## Bài tập
 
-### 1. Viết báo cáo trả lời cho các câu hỏi trong quá trình tìm hiểu. (Có dấu hỏi chấm của tài liệu này)
-### 2. Tạo tài khoản tại https://gitlab.com
+### 1. Tạo tài khoản tại https://gitlab.com
+### 2. Tạo repo thực hành các câu lệnh
